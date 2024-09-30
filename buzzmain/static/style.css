@@ -1,0 +1,186 @@
+/*--------------------------------------------------------------
+# CSS Reset
+--------------------------------------------------------------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 200px; /* height of sticky header */
+}
+
+/*--------------------------------------------------------------
+# Text area highlighting
+--------------------------------------------------------------*/
+
+
+.highlightTextarea {
+    position:relative;
+}
+.highlightTextarea .highlightTextarea-container {
+    position:absolute;
+    margin:0;
+    overflow:hidden;
+}
+.highlightTextarea .highlightTextarea-highlighter {
+    position:relative;
+    border:none;
+    padding:0;
+    margin:0;
+    color:transparent;
+    cursor:text;
+    overflow:hidden;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+}
+.highlightTextarea span {
+    line-height:inherit;
+    color:transparent;
+    margin:0;
+    padding:0;
+}
+.highlightTextarea textarea,
+.highlightTextarea input {
+    position:absolute;
+    left:0;
+    top:0;
+    resize: none;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+}
+.highlightTextarea .ui-wrapper {
+    margin:0 !important;
+}
+.highlightTextarea .ui-resizable-se {
+    bottom:15px;
+    right:0px;
+}
+
+.ui-widget {
+    font-size: inherit;
+    font-family: inherit;
+}
+.ui-autocomplete-input {
+    font-family: inherit !important;
+}
+.ui-autocomplete {
+    z-index: 1055;
+}
+.bi {
+    margin-right: 0.5rem;
+}
+.spinner-border {
+    margin-right: 0.5rem;
+}
+#upload_spinner {
+    display: none;
+}
+#oclc_spinner {
+    display: none;
+}
+#Upload {
+    display: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
+    border-style: dashed;
+}
+
+.gutter-col {
+    grid-row: 1/-1;
+    cursor: col-resize;
+}
+
+.gutter-col-1 {
+    grid-column: 2;
+}
+
+.marc {
+    width: 100%;
+    resize: both;
+    overflow: scroll;
+}
+
+.ul_red {
+    text-decoration: underline wavy red 0.5px;
+}
+
+.ul_orange {
+    text-decoration: underline wavy orange 0.5px;
+}
+
+.ul_green {
+    text-decoration: underline wavy green 0.5px;
+}
+
+.Serious {
+    color: red;
+}
+
+.Moderate {
+    color: orange;
+}
+
+.Ignorable {
+    color: green;
+}

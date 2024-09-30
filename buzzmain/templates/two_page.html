@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  {% if filename %}
+    <p class="p-2">File <span class="fw-bolder">{{filename}}</span> uploaded</p>
+  {% else %}
+    <p class="p-2">No file uploaded</p>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="grid border-dark-subtle rounded-4">
+    <div class="p-3">
+      {% block left %}{% endblock %}
+    </div>
+    <div class="gutter-col gutter-col-1 bg-dark-subtle"></div>
+    <div class="p-3">
+      {% block right %}{% endblock %}
+    </div>
+  </div>
+{% endblock %}

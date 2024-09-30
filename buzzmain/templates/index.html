@@ -1,0 +1,30 @@
+{% extends 'two_page.html' %}
+
+{% block header %}
+<div class="row col-10">
+    <p class="p-2">Welcome to <b>Buzz</b></p>
+</div>
+{% endblock %}
+
+{% block left %}
+<head>
+  {{ dropzone.load_css() }}
+  {{ dropzone.style('min-height: 400px;border-radius: 25px;') }}
+</head>
+<div>
+  {{ dropzone.create(action='/upload') }}
+  {{ dropzone.load_js() }}
+  {{ dropzone.config() }}
+</div>
+{% endblock %}
+
+{% block right %}
+<div class="row">
+  <div class="col-12 col-md-3 mx-auto">
+    <a href="#" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Useful tip: drag the grey bar in the middle to re-size the windows">
+      <img class="img-fluid" src="{{ url_for('static', filename='bee.png')}}" alt="Buzz">
+    </a>
+    <p><small>Hover over the bee for hints</small></p>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+<div>
+    {% if pos_input_records and num_input_records and pos_input_records > num_input_records %}
+        <div class="row mb-3">
+            <p>Reached end of file</p>
+        </div>
+    {% else %}
+        {% if valid %}
+            <p>No errors found!</p>
+        {% elif errors %}
+        {% for error_type in errors %}
+            {% if errors[error_type]|length > 0 %}
+                <p class="p-3 text-capitalize fw-bold">{{error_type}}</p>
+                <ul class="list-unstyled">
+                    {% for error in errors[error_type]|sort %}
+                        <li><span class="fw-semibold p-2 {{error.split('|', 2)[1]}}"><a class="text-reset text-decoration-none" href="https://www.loc.gov/marc/bibliographic/bd{{error.split('|', 2)[0]}}.html" target="_blank">{{error.split('|', 2)[0]}}</a></span> {{error.split('|', 2)[2].replace('\\n','<br/>')|safe}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endfor %}
+        {% else %}
+            <button type="button" class="btn btn-outline-secondary" onclick="checkRecord()"><i class="bi bi-file-earmark-check"></i>Check Record</button>
+        {% endif %}
+    {% endif %}
+</div>

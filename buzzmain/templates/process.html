@@ -1,0 +1,37 @@
+{% extends 'two_page.html' %}
+
+{% block title %} - Process {% if filename %}{{ filename }}{% endif %}{% endblock %}
+{% block onload %}onload="setupToggle();setupHighlighter();"{% endblock %}
+
+{% block header %}
+    <div class="col-8 me-auto">
+      {% if filename %}
+        <p class="p-2">File <span class="fw-bolder">{{filename}}</span> uploaded</p>
+    {% else %}
+        <p class="p-2">No file uploaded</p>
+    {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block left %}
+    <div id="marc">
+         {% include "marc.html" %}
+    </div>
+{% endblock %}
+
+{% block right %}
+    <div id="validate">
+        {% include "validation.html" %}
+    </div>
+{% endblock %}
+
+{% block offcanvas %}
+    {% include 'tools.html' %}
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        {% include 'scripts.js' %}
+    </script>
+{% endblock %}
